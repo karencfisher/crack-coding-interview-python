@@ -40,3 +40,14 @@ class BinaryTree:
                     row.append(str(node))
             nodes.append(' '.join(row) + '\n')
         return ''.join(nodes)  
+
+
+def serialize_tree(tree):
+    items = []
+    def inorder(node, items):
+        if node is not None:
+            inorder(node.left, items)
+            items.append(node.payload)
+            inorder(node.right, items)
+    inorder(tree, items)
+    return items

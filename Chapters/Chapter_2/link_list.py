@@ -12,7 +12,7 @@ class Node:
 
 
 class LinkList:
-    def __init__(self, array):
+    def __init__(self, array=[]):
         self.head = Node(None)
         self.tail = None
         self.length = 0
@@ -42,6 +42,7 @@ class LinkList:
             self.tail = other.tail
         else:
             self.add_node(other)
+        return self
 
     def __len__(self):
         return self.length
@@ -52,7 +53,7 @@ class LinkList:
         while node is not None:
             link_list.append(str(node.data))
             node = node.next
-        return '->'.join(link_list)
+        return '-->'.join(link_list)
         
 
 def test():
